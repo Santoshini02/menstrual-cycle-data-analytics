@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>PCOS Risk Analyzer</h2>
+
+<p>Your BMI: {{ bmi }}</p>
+
+<form method="POST">
+
+<label><input type="checkbox" name="irregular"> Irregular Periods</label>
+
+<label><input type="checkbox" name="acne"> Severe Acne</label>
+
+<label><input type="checkbox" name="hair"> Excess Hair Growth</label>
+
+<label><input type="checkbox" name="weight_gain"> Weight Gain</label>
+
+<label><input type="checkbox" name="dark_skin"> Dark Neck Skin</label>
+
+<button type="submit">Analyze Risk</button>
+
+</form>
+
+{% if risk %}
+
+<div class="result">
+
+<h3>{{ risk }}</h3>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

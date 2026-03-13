@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>Cycle Calendar</h2>
+
+<div id="calendar"></div>
+
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+var calendarEl=document.getElementById('calendar');
+
+var calendar=new FullCalendar.Calendar(calendarEl,{
+
+initialView:'dayGridMonth',
+
+events:[
+
+{
+title:"Last Period",
+start:"{{ last_period }}"
+},
+
+{
+title:"Predicted Period",
+start:"{{ next_period }}",
+color:"red"
+},
+
+{
+title:"Ovulation",
+start:"{{ ovulation }}",
+color:"pink"
+},
+
+{
+title:"Fertile Window",
+start:"{{ fertile_start }}",
+end:"{{ fertile_end }}",
+color:"lightgreen"
+}
+
+]
+
+});
+
+calendar.render();
+
+});
+
+</script>
+
+{% endblock %}

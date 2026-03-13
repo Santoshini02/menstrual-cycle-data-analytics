@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>Pregnancy Tracker</h2>
+
+<form method="POST">
+
+<label>Conception Date</label>
+
+<input type="date" name="date" required>
+
+<button type="submit">Track Pregnancy</button>
+
+</form>
+
+{% if week %}
+
+<div class="result">
+
+<h3>Current Week: {{ week }}</h3>
+
+<p>Expected Due Date: {{ due_date }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

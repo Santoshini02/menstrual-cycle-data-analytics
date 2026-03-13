@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>Track Symptoms</h2>
+
+<form method="POST">
+
+<div class="symptom-grid">
+
+{% set symptoms=[
+"Abdominal Pain","Lower Back Pain","Headache","Nausea",
+"Bloating","Breast Tenderness","Mood Swings","Fatigue",
+"Acne","Hair Fall","Weight Gain","Food Cravings",
+"Sleep Issues","Spotting","Heavy Bleeding","Irregular Periods"
+] %}
+
+{% for s in symptoms %}
+
+<label>
+<input type="checkbox" name="symptoms" value="{{s}}">
+{{s}}
+</label>
+
+{% endfor %}
+
+</div>
+
+<button type="submit">Save Symptoms</button>
+
+</form>
+
+</div>
+
+{% endblock %}

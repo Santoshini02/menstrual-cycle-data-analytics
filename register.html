@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>Create Account</h2>
+
+<form method="POST">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<label>Last Period Date</label>
+<input type="date" name="last_period" required>
+
+<label>Cycle Length</label>
+<input type="number" name="cycle_length" value="28" required>
+
+<label>Period Duration</label>
+<input type="number" name="period_duration" value="5" required>
+
+<label>Height (cm)</label>
+<input type="number" step="0.1" name="height" required>
+
+<label>Weight (kg)</label>
+<input type="number" step="0.1" name="weight" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+{% endblock %}

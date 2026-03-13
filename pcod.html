@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>PCOD Risk Analyzer</h2>
+
+<form method="POST">
+
+<label><input type="checkbox" name="irregular"> Irregular Periods</label>
+
+<label><input type="checkbox" name="bloating"> Bloating</label>
+
+<label><input type="checkbox" name="mood"> Mood Swings</label>
+
+<label><input type="checkbox" name="fatigue"> Fatigue</label>
+
+<button type="submit">Analyze PCOD</button>
+
+</form>
+
+{% if risk %}
+
+<h3>{{ risk }}</h3>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

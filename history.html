@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>Symptom History</h2>
+
+<table>
+
+<tr>
+
+<th>Date</th>
+<th>Symptoms</th>
+
+</tr>
+
+{% for r in records %}
+
+<tr>
+
+<td>{{ r.date_logged }}</td>
+<td>{{ r.symptom_list }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}
